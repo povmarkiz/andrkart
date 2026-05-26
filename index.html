@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Андрей Карташёв — Художник</title>
+<meta name="description" content="Андрей Карташёв — современный российский художник. Живопись, анималистика, религиозная живопись.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Карташёв</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active" data-ru="Главная" data-en="Home">Главная</a></li>
+    <li><a href="biography.html" data-ru="Биография" data-en="Biography">Биография</a></li>
+    <li><a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a></li>
+    <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+  </ul>
+  <div class="nav-lang">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+  <a href="biography.html" data-ru="Биография" data-en="Biography">Биография</a>
+  <a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a>
+  <a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a>
+  <div class="nav-lang" style="margin-top:8px;">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<main class="page">
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <!-- Замените src на путь к главной работе, например: src="img/hero.jpg" -->
+      <div class="ph" style="height:100%;"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-caption">
+      <h1 class="hero-name lang-ru">Андрей<br>Карташёв</h1>
+      <h1 class="hero-name lang-en hidden">Andrey<br>Kartashev</h1>
+      <p class="hero-subtitle lang-ru">Художник · Москва</p>
+      <p class="hero-subtitle lang-en hidden">Artist · Moscow</p>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT PREVIEW ─── -->
+  <hr class="section-divider">
+  <section class="section">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label lang-ru">Об авторе</p>
+        <p class="section-label lang-en hidden">About</p>
+
+        <p class="lang-ru">
+          Андрей Карташёв (р. 1981) — современный российский художник, работающий
+          с жанрами анималистики и религиозной живописи. Создаёт насыщенные по
+          цвету и динамике линий картины в направлении наивного искусства.
+          Обращается к древним мифам, легендам и образам.
+        </p>
+        <p class="lang-en hidden">
+          Andrey Kartashev (b. 1981) is a contemporary Russian artist working in
+          animal painting and religious art. He creates richly colored, dynamically
+          expressive paintings in the tradition of naïve art, drawing on ancient
+          myths, legends, and imagery.
+        </p>
+
+        <a href="biography.html" class="btn">
+          <span data-ru="Читать подробнее" data-en="Read more">Читать подробнее</span>
+        </a>
+      </div>
+
+      <div>
+        <!-- Замените на портрет художника: src="img/portrait.jpg" -->
+        <div class="ph ph-34" style="max-width:420px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <hr class="section-divider">
+  <section class="section">
+    <p class="section-label" data-ru="Проекты" data-en="Projects">Проекты</p>
+    <div class="projects-grid">
+
+      <div class="proj-card">
+        <!-- src="img/sadko-preview.jpg" -->
+        <div class="ph ph-34"></div>
+        <p class="proj-card-name lang-ru">Садко</p>
+        <p class="proj-card-name lang-en hidden">Sadko</p>
+        <p class="proj-card-year">2025</p>
+      </div>
+
+      <div class="proj-card">
+        <!-- src="img/sova-preview.jpg" -->
+        <div class="ph ph-34"></div>
+        <p class="proj-card-name lang-ru">Сова</p>
+        <p class="proj-card-name lang-en hidden">Owl</p>
+        <p class="proj-card-year">2026</p>
+      </div>
+
+      <div class="proj-card">
+        <!-- src="img/losi-preview.jpg" -->
+        <div class="ph ph-34"></div>
+        <p class="proj-card-name lang-ru">Лоси</p>
+        <p class="proj-card-name lang-en hidden">Moose</p>
+        <p class="proj-card-year">&nbsp;</p>
+      </div>
+
+      <div class="proj-card">
+        <!-- src="img/icons-preview.jpg" -->
+        <div class="ph ph-34"></div>
+        <p class="proj-card-name lang-ru">Нео Иконография</p>
+        <p class="proj-card-name lang-en hidden">Neo Iconography</p>
+        <p class="proj-card-year">&nbsp;</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2025 Андрей Карташёв</span>
+  <span class="lang-ru">Москва, Россия</span>
+  <span class="lang-en hidden">Moscow, Russia</span>
+</footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

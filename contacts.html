@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты — Андрей Карташёв</title>
+<meta name="description" content="Контакты художника Андрея Карташёва">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Карташёв</a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+    <li><a href="biography.html" data-ru="Биография" data-en="Biography">Биография</a></li>
+    <li><a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a></li>
+    <li><a href="contacts.html" class="active" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+  </ul>
+  <div class="nav-lang">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+  <a href="biography.html" data-ru="Биография" data-en="Biography">Биография</a>
+  <a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a>
+  <a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a>
+  <div class="nav-lang" style="margin-top:8px;">
+    <button class="lang-btn" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<main class="page">
+  <div class="contacts-wrap">
+    <div class="contacts-inner">
+
+      <h1 class="contacts-name lang-ru">Андрей<br>Карташёв</h1>
+      <h1 class="contacts-name lang-en hidden">Andrey<br>Kartashev</h1>
+      <p class="contacts-loc lang-ru">Москва, Россия</p>
+      <p class="contacts-loc lang-en hidden">Moscow, Russia</p>
+
+      <div class="contact-item">
+        <p class="contact-label lang-ru">Телефон</p>
+        <p class="contact-label lang-en hidden">Phone</p>
+        <p class="contact-value">
+          <a href="tel:+79991234567">+7 (925) 046-90-20</a>
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <p class="contact-label">Email</p>
+        <p class="contact-value">
+          <a href="mailto:info@kartashev.ru">email@andrkart.ru</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>© 2025 Андрей Карташёв</span>
+  <span class="lang-ru">Москва, Россия</span>
+  <span class="lang-en hidden">Moscow, Russia</span>
+</footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

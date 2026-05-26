@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title lang-ru>Биография — Андрей Карташёв</title>
+<meta name="description" content="Биография художника Андрея Карташёва">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Карташёв</a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+    <li><a href="biography.html" class="active" data-ru="Биография" data-en="Biography">Биография</a></li>
+    <li><a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a></li>
+    <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+  </ul>
+  <div class="nav-lang">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+  <a href="biography.html" data-ru="Биография" data-en="Biography">Биография</a>
+  <a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a>
+  <a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a>
+  <div class="nav-lang" style="margin-top:8px;">
+    <button class="lang-btn" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<main class="page">
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-head">
+    <p class="page-head-label lang-ru">Андрей Карташёв</p>
+    <p class="page-head-label lang-en hidden">Andrey Kartashev</p>
+    <h1 class="page-head-title lang-ru">Биография</h1>
+    <h1 class="page-head-title lang-en hidden">Biography</h1>
+  </div>
+
+  <!-- ─── BIO CONTENT ─── -->
+  <section class="section">
+    <div class="bio-grid">
+
+      <!-- Portrait -->
+      <div>
+        <div class="bio-photo">
+          <!-- Портрет: src="img/portrait.jpg" -->
+          <div class="ph ph-43"></div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="bio-text">
+
+        <!-- RU -->
+        <div class="lang-ru">
+          <p>
+            Андрей Карташёв (р. 1981) — современный российский художник, работающий с жанрами
+            анималистики и религиозной живописи. В работах обращается к древним мифам и
+            легендам. Создаёт насыщенные по цвету и динамике линий картины в направлении
+            наивного искусства. Главные проекты — «Садко» (2025), «Сова» (2026).
+          </p>
+          <p>
+            Несколько лет брал частные уроки у художника Юрия Мелексетяна (Юра Мекс), затем
+            продолжил самостоятельное обучение.
+          </p>
+          <p>
+            Параллельно с художественной деятельностью Андрей Карташёв создал в 2016 году
+            декорационную компанию «Опора Красного». Среди известных кинокартин, для которых
+            его командой были произведены декорации: «Движение вверх» (2017), «Огонь» (2020),
+            «Пара из будущего» (2021), «Бременские музыканты» (2023), многосерийный фильм
+            «Хроники Русской революции» (2025) и другие.
+          </p>
+          <p>Живёт и работает в Москве.</p>
+
+          <div class="bio-exhibitions">
+            <h3>Выставки и участие</h3>
+
+            <div class="exhibition-row">
+              <span class="exh-year">2026</span>
+              <span class="exh-name">«Модно-подводная Одиссея Команды Садко», галерея «Здесь на Таганке», Москва</span>
+            </div>
+            <div class="exhibition-row">
+              <span class="exh-year">2022</span>
+              <span class="exh-name">Биеналле современного искусства, Третьяковская галерея (отбор)</span>
+            </div>
+            <div class="exhibition-row">
+              <span class="exh-year">2022</span>
+              <span class="exh-name">«Музей экологического искусства», Москва</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EN -->
+        <div class="lang-en hidden">
+          <p>
+            Andrey Kartashev (b. 1981) is a contemporary Russian artist working in animal
+            painting and religious art. His works draw on ancient myths and legends. He creates
+            richly colored, dynamically expressive paintings in the tradition of naïve art.
+            His main projects are Sadko (2025) and Owl (2026).
+          </p>
+          <p>
+            He studied privately with artist Yuri Meleksytan (Yura Meks) for several years,
+            then continued his education independently.
+          </p>
+          <p>
+            Alongside his artistic practice, Kartashev founded the set design company
+            Opora Krasnogo (Red Support) in 2016. Films for which his team created sets include:
+            <em>Going Vertical</em> (2017), <em>Fire</em> (2020), <em>A Couple from the Future</em> (2021),
+            <em>The Bremen Town Musicians</em> (2023), the miniseries
+            <em>Chronicles of the Russian Revolution</em> (2025), and others.
+          </p>
+          <p>He lives and works in Moscow.</p>
+
+          <div class="bio-exhibitions">
+            <h3>Exhibitions &amp; Participation</h3>
+
+            <div class="exhibition-row">
+              <span class="exh-year">2026</span>
+              <span class="exh-name">"Fashionably Underwater: The Odyssey of Team Sadko," gallery Zdes na Taganka, Moscow</span>
+            </div>
+            <div class="exhibition-row">
+              <span class="exh-year">2022</span>
+              <span class="exh-name">Biennale of Contemporary Art, Tretyakov Gallery (selected)</span>
+            </div>
+            <div class="exhibition-row">
+              <span class="exh-year">2022</span>
+              <span class="exh-name">"Museum of Ecological Art," Moscow</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2025 Андрей Карташёв</span>
+  <span class="lang-ru">Москва, Россия</span>
+  <span class="lang-en hidden">Moscow, Russia</span>
+</footer>
+
+<script src="lang.js"></script>
+</body>
+</html>
