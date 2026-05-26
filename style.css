@@ -99,6 +99,12 @@ img { display: block; max-width: 100%; height: auto; }
   background: var(--ink);
   transition: transform .25s, opacity .25s;
 }
+.nav-vdiv {
+  width: 0.5px;
+  height: 18px;
+  background: var(--border);
+  flex-shrink: 0;
+}
 .nav-mobile {
   display: none;
   position: fixed;
@@ -201,11 +207,12 @@ img { display: block; max-width: 100%; height: auto; }
   border-top: 0.5px solid var(--border);
 }
 .section-label {
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-light);
+  color: var(--ink-mid);
   margin-bottom: 36px;
+  font-weight: 400;
 }
 
 /* ─── ABOUT PREVIEW ──────────────────────────────── */
