@@ -50,6 +50,17 @@
   z-index: 1000;
 }
 .lb-close:hover { color: #fff; }
+.lb-caption {
+  position: fixed;
+  bottom: 24px;
+  left: 0; right: 0;
+  text-align: center;
+  color: rgba(255,255,255,.55);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
 .lb-prev, .lb-next {
   position: fixed;
   top: 50%;
@@ -351,12 +362,14 @@
   <span class="lb-prev" id="lb-prev">&#8592;</span>
   <img class="lb-img" id="lb-img" src="" alt="">
   <span class="lb-next" id="lb-next">&#8594;</span>
+  <p class="lb-caption" id="lb-caption"></p>
 </div>
 
 <script>
 (function () {
   var lb      = document.getElementById('lb');
   var lbImg   = document.getElementById('lb-img');
+  var lbCap   = document.getElementById('lb-caption');
   var lbClose = document.getElementById('lb-close');
   var lbPrev  = document.getElementById('lb-prev');
   var lbNext  = document.getElementById('lb-next');
