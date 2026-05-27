@@ -80,7 +80,14 @@
 .lb-next { right: 16px; }
 .lb-prev:hover, .lb-next:hover { color: #fff; }
 /* make work images feel clickable */
-.works-grid img { cursor: zoom-in; transition: opacity .25s; }
+.works-grid img {
+  cursor: zoom-in;
+  transition: opacity .25s;
+  width: 100%;
+  height: auto;
+  aspect-ratio: unset !important;
+  object-fit: unset;
+}
 .works-grid img:hover { opacity: .85; }
 </style>
 </head>
@@ -188,7 +195,7 @@
       </div>
       <div class="works-grid">
         <div>
-          <img src="img/Чернавушка.webp" alt="Чернавушка" class="ph ph-11" loading="lazy">
+          <img src="img/Чернавушка.jpg" alt="Чернавушка" class="ph ph-11" loading="lazy">
           <p class="work-title lang-ru">Чернавушка</p>
           <p class="work-title lang-en hidden">Chernavushka</p>
           <p class="work-meta lang-ru">Бумага, карандаш, акрил; куклы, пена, нитро краска — рисунок 20×30, багет 90×90 см · 2025</p>
@@ -206,35 +213,35 @@
       </div>
       <div class="works-grid">
         <div>
-          <img src="img/Камень.webp" alt="Камень" class="ph ph-11" loading="lazy">
+          <img src="img/Камень.jpg" alt="Камень" class="ph ph-11" loading="lazy">
           <p class="work-title lang-ru">Камень</p>
           <p class="work-title lang-en hidden">Stone</p>
           <p class="work-meta lang-ru">Холст, акрил · 100×100 см · 2026</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 100×100 cm · 2026</p>
         </div>
         <div>
-          <img src="img/Триптих «Пространство и время».webp" alt="Триптих Пространство и время" class="ph ph-43" loading="lazy">
+          <img src="img/Триптих «Пространство и время».jpg" alt="Триптих Пространство и время" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Триптих «Пространство и время»</p>
           <p class="work-title lang-en hidden">Triptych "Space and Time"</p>
           <p class="work-meta lang-ru">Холст, акрил · 240×160 см · 2026</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 240×160 cm · 2026</p>
         </div>
         <div>
-          <img src="img/Синий Камень.webp" alt="Синий Камень" class="ph ph-34" loading="lazy">
+          <img src="img/Синий Камень.jpg" alt="Синий Камень" class="ph ph-34" loading="lazy">
           <p class="work-title lang-ru">Синий Камень</p>
           <p class="work-title lang-en hidden">Blue Stone</p>
           <p class="work-meta lang-ru">Холст, акрил · 200×150 см · 2026</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 200×150 cm · 2026</p>
         </div>
         <div>
-          <img src="img/Горцы.webp" alt="Горцы" class="ph ph-11" loading="lazy">
+          <img src="img/Горцы.jpg" alt="Горцы" class="ph ph-11" loading="lazy">
           <p class="work-title lang-ru">Горцы</p>
           <p class="work-title lang-en hidden">Highlanders</p>
           <p class="work-meta lang-ru">Холст, акрил · 100×100 см · 2026</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 100×100 cm · 2026</p>
         </div>
         <div>
-          <img src="img/Стремление.webp" alt="Стремление" class="ph ph-34" loading="lazy">
+          <img src="img/Стремление.jpg" alt="Стремление" class="ph ph-34" loading="lazy">
           <p class="work-title lang-ru">Стремление</p>
           <p class="work-title lang-en hidden">Aspiration</p>
           <p class="work-meta lang-ru">Холст, акрил · 200×150 см · 2026</p>
@@ -252,28 +259,28 @@
       </div>
       <div class="works-grid">
         <div>
-          <img src="img/Бег.webp" alt="Бег" class="ph ph-43" loading="lazy">
+          <img src="img/Бег.jpg" alt="Бег" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Бег</p>
           <p class="work-title lang-en hidden">Run</p>
           <p class="work-meta lang-ru">Холст, акрил · 50×80 см · 2022</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 50×80 cm · 2022</p>
         </div>
         <div>
-          <img src="img/Оттепель.webp" alt="Оттепель" class="ph ph-43" loading="lazy">
+          <img src="img/Оттепель.jpg" alt="Оттепель" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Оттепель</p>
           <p class="work-title lang-en hidden">Thaw</p>
           <p class="work-meta lang-ru">Холст, акрил · 60×80 см · 2022</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 60×80 cm · 2022</p>
         </div>
         <div>
-          <img src="img/Дождь.webp" alt="Дождь" class="ph ph-43" loading="lazy">
+          <img src="img/Дождь.jpg" alt="Дождь" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Дождь</p>
           <p class="work-title lang-en hidden">Rain</p>
           <p class="work-meta lang-ru">Холст, акрил · 70×90 см · 2022</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 70×90 cm · 2022</p>
         </div>
         <div>
-          <img src="img/Дух.webp" alt="Дух" class="ph ph-43" loading="lazy">
+          <img src="img/Дух.jpg" alt="Дух" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Дух</p>
           <p class="work-title lang-en hidden">Spirit</p>
           <p class="work-meta lang-ru">Холст, акрил, малярный скотч · 75×105 см · 2022</p>
@@ -291,42 +298,42 @@
       </div>
       <div class="works-grid">
         <div>
-          <img src="img/Пантократор.webp" alt="Пантократор" class="ph ph-43" loading="lazy">
+          <img src="img/Пантократор.jpg" alt="Пантократор" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Пантократор</p>
           <p class="work-title lang-en hidden">Pantocrator</p>
           <p class="work-meta lang-ru">Холст, акрил · 70×90 см · 2022</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 70×90 cm · 2022</p>
         </div>
         <div>
-          <img src="img/Вознесение.webp" alt="Вознесение" class="ph ph-43" loading="lazy">
+          <img src="img/Вознесение.jpg" alt="Вознесение" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Вознесение</p>
           <p class="work-title lang-en hidden">Ascension</p>
           <p class="work-meta lang-ru">Холст, акрил · 70×90 см · 2022</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 70×90 cm · 2022</p>
         </div>
         <div>
-          <img src="img/Вход Господень в Иерусалим.webp" alt="Вход Господень в Иерусалим" class="ph ph-43" loading="lazy">
+          <img src="img/Вход Господень в Иерусалим.jpg" alt="Вход Господень в Иерусалим" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Вход Господень в Иерусалим</p>
           <p class="work-title lang-en hidden">Entry into Jerusalem</p>
           <p class="work-meta lang-ru">Холст, акрил · 70×90 см · 2025</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 70×90 cm · 2025</p>
         </div>
         <div>
-          <img src="img/Троица Ветхозаветная.webp" alt="Троица Ветхозаветная" class="ph ph-43" loading="lazy">
+          <img src="img/Троица Ветхозаветная.jpg" alt="Троица Ветхозаветная" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Троица Ветхозаветная</p>
           <p class="work-title lang-en hidden">Old Testament Trinity</p>
           <p class="work-meta lang-ru">Холст, акрил · 70×90 см · 2022</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 70×90 cm · 2022</p>
         </div>
         <div>
-          <img src="img/Благовещение.webp" alt="Благовещение" class="ph ph-43" loading="lazy">
+          <img src="img/Благовещение.jpg" alt="Благовещение" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Благовещение</p>
           <p class="work-title lang-en hidden">Annunciation</p>
           <p class="work-meta lang-ru">Холст, акрил · 70×90 см · 2022</p>
           <p class="work-meta lang-en hidden">Canvas, acrylic · 70×90 cm · 2022</p>
         </div>
         <div>
-          <img src="img/Спас.webp" alt="Спас" class="ph ph-43" loading="lazy">
+          <img src="img/Спас.jpg" alt="Спас" class="ph ph-43" loading="lazy">
           <p class="work-title lang-ru">Спас</p>
           <p class="work-title lang-en hidden">The Saviour</p>
           <p class="work-meta lang-ru">Баннер, акрил · 150×200 см · 2022</p>
