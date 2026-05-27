@@ -163,6 +163,7 @@ img { display: block; max-width: 100%; height: auto; }
   z-index: 2;
   padding: 0 var(--gutter) 52px;
   width: 100%;
+  color: #ffffff;
 }
 .hero-name {
   font-family: var(--serif);
@@ -170,12 +171,13 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 300;
   line-height: 1.0;
   letter-spacing: -0.01em;
+  color: #ffffff;
 }
 .hero-subtitle {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink-mid);
+  color: rgba(255,255,255,0.7);
   margin-top: 12px;
 }
 
