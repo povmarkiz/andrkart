@@ -8,6 +8,81 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* ─── LIGHTBOX ─── */
+.lb {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0,0,0,.92);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.lb.open { display: flex; }
+.lb-img {
+  max-width: 92vw;
+  max-height: 92vh;
+  object-fit: contain;
+  display: block;
+  cursor: default;
+  box-shadow: 0 8px 60px rgba(0,0,0,.6);
+}
+.lb-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255,255,255,.7);
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 1;
+  transition: color .2s;
+  user-select: none;
+  z-index: 1000;
+}
+.lb-close:hover { color: #fff; }
+.lb-caption {
+  position: fixed;
+  bottom: 24px;
+  left: 0; right: 0;
+  text-align: center;
+  color: rgba(255,255,255,.55);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+.lb-prev, .lb-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255,255,255,.5);
+  font-size: 28px;
+  font-weight: 200;
+  transition: color .2s;
+  user-select: none;
+  z-index: 1000;
+}
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-prev:hover, .lb-next:hover { color: #fff; }
+/* make work images feel clickable */
+.works-grid img { cursor: zoom-in; transition: opacity .25s; }
+.works-grid img:hover { opacity: .85; }
+</style>
 </head>
 <body>
 
@@ -271,5 +346,100 @@
 </footer>
 
 <script src="lang.js"></script>
+
+<!-- ─── LIGHTBOX ─── -->
+<div class="lb" id="lb">
+  <span class="lb-close" id="lb-close" title="Закрыть">&#x2715;</span>
+  <span class="lb-prev" id="lb-prev">&#8592;</span>
+  <img class="lb-img" id="lb-img" src="" alt="">
+  <span class="lb-next" id="lb-next">&#8594;</span>
+  <p class="lb-caption" id="lb-caption"></p>
+</div>
+
+<script>
+(function () {
+  var lb      = document.getElementById('lb');
+  var lbImg   = document.getElementById('lb-img');
+  var lbCap   = document.getElementById('lb-caption');
+  var lbClose = document.getElementById('lb-close');
+  var lbPrev  = document.getElementById('lb-prev');
+  var lbNext  = document.getElementById('lb-next');
+
+  var images  = [];  // [{src, caption}]
+  var current = 0;
+
+  function buildIndex() {
+    images = [];
+    document.querySelectorAll('.works-grid img').forEach(function (img) {
+      // caption: work-title text from next sibling elements
+      var container = img.parentElement;
+      var titleEl = container.querySelector('.work-title:not(.hidden)');
+      var metaEl  = container.querySelector('.work-meta:not(.hidden)');
+      images.push({
+        src:     img.src,
+        caption: (titleEl ? titleEl.textContent : '') +
+                 (metaEl  ? '  ·  ' + metaEl.textContent : '')
+      });
+      img.dataset.lbIndex = images.length - 1;
+    });
+  }
+
+  function show(index) {
+    current = (index + images.length) % images.length;
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].caption;
+    lbCap.textContent = images[current].caption;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hide() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    buildIndex();
+
+    // Rebuild when language switches (captions change)
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setTimeout(buildIndex, 50);
+      });
+    });
+
+    // Open on image click
+    document.querySelectorAll('.works-grid img').forEach(function (img) {
+      img.addEventListener('click', function (e) {
+        e.stopPropagation();
+        show(parseInt(img.dataset.lbIndex));
+      });
+    });
+
+    // Close
+    lbClose.addEventListener('click', hide);
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb) hide();
+    });
+
+    // Navigation
+    lbPrev.addEventListener('click', function (e) {
+      e.stopPropagation(); show(current - 1);
+    });
+    lbNext.addEventListener('click', function (e) {
+      e.stopPropagation(); show(current + 1);
+    });
+
+    // Keyboard
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')      hide();
+      if (e.key === 'ArrowLeft')   show(current - 1);
+      if (e.key === 'ArrowRight')  show(current + 1);
+    });
+  });
+})();
+</script>
 </body>
 </html>
