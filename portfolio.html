@@ -362,14 +362,12 @@
   <span class="lb-prev" id="lb-prev">&#8592;</span>
   <img class="lb-img" id="lb-img" src="" alt="">
   <span class="lb-next" id="lb-next">&#8594;</span>
-  <p class="lb-caption" id="lb-caption"></p>
 </div>
 
 <script>
 (function () {
   var lb      = document.getElementById('lb');
   var lbImg   = document.getElementById('lb-img');
-  var lbCap   = document.getElementById('lb-caption');
   var lbClose = document.getElementById('lb-close');
   var lbPrev  = document.getElementById('lb-prev');
   var lbNext  = document.getElementById('lb-next');
@@ -397,7 +395,6 @@
     current = (index + images.length) % images.length;
     lbImg.src = images[current].src;
     lbImg.alt = images[current].caption;
-    lbCap.textContent = images[current].caption;
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
