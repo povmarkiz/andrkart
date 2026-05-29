@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Выставки — Андрей Карташёв</title>
+<meta name="description" content="Фотографии с выставок Андрея Карташёва">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ─── EXHIBITION GALLERY ─── */
+.exh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 48px;
+}
+.exh-item {
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--bg-warm);
+}
+.exh-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  display: block;
+  transition: opacity .25s;
+}
+.exh-item:hover img { opacity: .88; }
+
+/* ─── LIGHTBOX ─── */
+.lb {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0,0,0,.93);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.lb.open { display: flex; }
+.lb-img {
+  max-width: 92vw;
+  max-height: 92vh;
+  object-fit: contain;
+  display: block;
+  cursor: default;
+  box-shadow: 0 8px 60px rgba(0,0,0,.6);
+}
+.lb-close {
+  position: fixed;
+  top: 20px; right: 24px;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: rgba(255,255,255,.65);
+  font-size: 28px; font-weight: 200; line-height: 1;
+  transition: color .2s;
+  user-select: none; z-index: 1000;
+}
+.lb-close:hover { color: #fff; }
+.lb-prev, .lb-next {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: rgba(255,255,255,.5);
+  font-size: 28px; font-weight: 200;
+  transition: color .2s;
+  user-select: none; z-index: 1000;
+}
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-prev:hover, .lb-next:hover { color: #fff; }
+.lb-counter {
+  position: fixed; bottom: 24px; left: 0; right: 0;
+  text-align: center;
+  color: rgba(255,255,255,.4);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .exh-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+}
+@media (max-width: 480px) {
+  .exh-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Андрей Карташёв</a>
+  <span class="nav-vdiv"></span>
+  <ul class="nav-links">
+    <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+    <li><a href="biography.html" data-ru="Биография" data-en="Biography">Биография</a></li>
+    <li><a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a></li>
+    <li><a href="exhibitions.html" class="active" data-ru="Выставки" data-en="Exhibitions">Выставки</a></li>
+    <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+  </ul>
+  <div class="nav-lang">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+  <a href="biography.html" data-ru="Биография" data-en="Biography">Биография</a>
+  <a href="portfolio.html" data-ru="Портфолио" data-en="Portfolio">Портфолио</a>
+  <a href="exhibitions.html" data-ru="Выставки" data-en="Exhibitions">Выставки</a>
+  <a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a>
+  <div class="nav-lang" style="margin-top:8px;">
+    <button class="lang-btn" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<main class="page">
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-head">
+    <p class="page-head-label lang-ru">Андрей Карташёв</p>
+    <p class="page-head-label lang-en hidden">Andrey Kartashev</p>
+    <h1 class="page-head-title lang-ru">Выставки</h1>
+    <h1 class="page-head-title lang-en hidden">Exhibitions</h1>
+  </div>
+
+  <!-- ─── GALLERY ─── -->
+  <section class="section" style="padding-top:0;">
+    <div class="exh-grid">
+      <div class="exh-item"><img src="img/DSC_0001.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0006.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0030.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0032.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0037.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0048.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0054.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0062.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0077.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0082.jpg" alt="Выставка" loading="lazy"></div>
+      <div class="exh-item"><img src="img/DSC_0086.jpg" alt="Выставка" loading="lazy"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Андрей Карташёв</span>
+  <span class="lang-ru">Москва, Россия</span>
+  <span class="lang-en hidden">Moscow, Russia</span>
+</footer>
+
+<!-- ─── LIGHTBOX ─── -->
+<div class="lb" id="lb">
+  <span class="lb-close" id="lb-close">&#x2715;</span>
+  <span class="lb-prev" id="lb-prev">&#8592;</span>
+  <img class="lb-img" id="lb-img" src="" alt="">
+  <span class="lb-next" id="lb-next">&#8594;</span>
+  <p class="lb-counter" id="lb-counter"></p>
+</div>
+
+<script src="lang.js"></script>
+<script>
+(function () {
+  var lb      = document.getElementById('lb');
+  var lbImg   = document.getElementById('lb-img');
+  var lbCount = document.getElementById('lb-counter');
+  var lbClose = document.getElementById('lb-close');
+  var lbPrev  = document.getElementById('lb-prev');
+  var lbNext  = document.getElementById('lb-next');
+  var images  = [];
+  var current = 0;
+
+  document.querySelectorAll('.exh-item img').forEach(function (img, i) {
+    images.push(img.src);
+    img.parentElement.addEventListener('click', function () { open(i); });
+  });
+
+  function open(i) {
+    current = (i + images.length) % images.length;
+    lbImg.src = images[current];
+    lbCount.textContent = (current + 1) + ' / ' + images.length;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  lbClose.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  lbPrev.addEventListener('click', function (e) { e.stopPropagation(); open(current - 1); });
+  lbNext.addEventListener('click', function (e) { e.stopPropagation(); open(current + 1); });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  open(current - 1);
+    if (e.key === 'ArrowRight') open(current + 1);
+  });
+})();
+</script>
+</body>
+</html>
